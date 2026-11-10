@@ -1,5 +1,7 @@
 <div align="center">
 
+<img alt="Jaime Yan, PhD — Clinical Data Science · Statistical Programming Leader. Kaplan-Meier curves and a DNA helix of data points." src="./dist/banner.svg" width="100%">
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./dist/neofetch-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./dist/neofetch-light.svg">
