@@ -5,7 +5,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./dist/neofetch-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./dist/neofetch-light.svg">
-  <img alt="Neofetch-style terminal card: Jaime Yan, PhD — Associate Director, Statistical Programming. R, Python, SQL, SAS; CDISC, GxP, LLM/RAG." src="./dist/neofetch-dark.svg" width="100%">
+  <img alt="Neofetch-style terminal card with an ASCII portrait. Jaime Yan, PhD: Associate Director, Statistical Programming at Kardigan; previously Merck, Regeneron, Boehringer Ingelheim; 9+ years in Phase 1–3; led statistical programming for the LIPFENDRA NDA; focus on data science leadership, R adoption and GxP AI." src="./dist/neofetch-dark.svg" width="100%">
 </picture>
 
 <br/>
@@ -14,7 +14,7 @@
 
 </div>
 
-### Hi, I'm Jaime 👋
+## Hi, I'm Jaime 👋
 
 I lead clinical data science and statistical programming teams, and I help organizations move to **open-source R and Python analytics that regulators can trust**: reproducible pipelines, CDISC-native data, and AI that runs inside the GxP boundary rather than around it.
 
@@ -34,7 +34,7 @@ I lead clinical data science and statistical programming teams, and I help organ
 
 ---
 
-### What my teams deliver: protocol to submission
+## What my teams deliver: protocol to submission
 
 ```mermaid
 flowchart TB
@@ -56,7 +56,7 @@ flowchart TB
 
 ---
 
-### Featured work
+## Featured work
 
 <table>
 <tr>
@@ -134,7 +134,7 @@ Public benchmarks for clinical statistical-programming automation, plus graph-co
 
 ---
 
-### Selected publications (sole author, 2026)
+## Selected publications (sole author, 2026)
 
 - *Workflow topology–guided skill loading for agentic AI in clinical trial data pipelines: sequential exploratory evaluation.* **JMIR Formative Research**, 2026. [doi:10.2196/100769](https://doi.org/10.2196/100769)
 - *A non-destructive methodological framework for modernizing legacy clinical reporting systems for AI-driven pharmacoinformatics: a SAS case study.* **Frontiers in Pharmacology**, 2026. [doi:10.3389/fphar.2026.1876207](https://doi.org/10.3389/fphar.2026.1876207) · [code](https://github.com/yanmingyu92/clinical-reporting-ir)
@@ -145,7 +145,7 @@ Public benchmarks for clinical statistical-programming automation, plus graph-co
 
 ---
 
-### Latest writing
+## Latest writing
 
 <!-- FEED:START -->
 - [AI in Validated Environments: LLMs Inside the GxP Boundary](https://jaimeyan.com/blog/ai-in-validated-environments.html) <sub>· Nov 04, 2026</sub>
@@ -159,7 +159,7 @@ Public benchmarks for clinical statistical-programming automation, plus graph-co
 
 ---
 
-### Toolbox
+## Toolbox
 
 <a href="https://skillicons.dev"><img alt="Skills: R, Python, PostgreSQL, Docker, Linux, Git, GitHub Actions" src="https://skillicons.dev/icons?i=r,py,postgres,docker,linux,git,githubactions&perline=10"></a>
 

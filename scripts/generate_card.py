@@ -262,7 +262,9 @@ def render_svg(cfg: dict, img, mask, stats: dict[str, str], theme: Theme) -> str
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}" role="img" aria-label="Neofetch-style profile card for {escape(cfg["title"])}">',
-        "<style>.c{animation:b 1.1s steps(1) infinite}@keyframes b{50%{opacity:0}}</style>",
+        "<style>.c{animation:b 1.1s steps(1) 6}@keyframes b{50%{opacity:0}}"
+        "@media (prefers-reduced-motion:reduce){.c{animation:none}}</style>",
+        f"<title>Neofetch-style profile card for {escape(cfg['title'])}</title>",
         f'<rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="12" fill="{theme.bg}" stroke="{theme.border}"/>',
         f'<g font-family="{FONT_STACK}" font-size="{FONT_SIZE}">',
         f'<text x="{PAD}" y="{prompt_y}" fill="{theme.prompt}" textLength="{len(cfg.get("prompt", "")) * CHAR_W:.1f}" '

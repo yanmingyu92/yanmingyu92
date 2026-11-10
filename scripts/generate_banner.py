@@ -79,7 +79,8 @@ def build() -> str:
 
     axis = (f'<path d="M{px0},{py0 - 10}V{py1}H{px1}" fill="none" stroke="#94a3b8" '
             f'stroke-opacity="0.35" stroke-width="1"/>')
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Jaime Yan, PhD. Clinical data science, statistical programming and GxP-ready AI.">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Jaime Yan, PhD. Clinical Data Science and Statistical Programming Leader. Reproducible, compliant, AI-assisted analytics.">
+<title>Jaime Yan, PhD: Clinical Data Science and Statistical Programming Leader</title>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
 <stop offset="0" stop-color="#0b1220"/><stop offset="0.55" stop-color="#0f2740"/><stop offset="1" stop-color="#0b3b40"/>

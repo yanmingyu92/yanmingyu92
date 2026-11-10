@@ -82,6 +82,7 @@ def build(pal: Palette) -> str:
     tiles = "\n".join(tile_svg(i, t, pal) for i, t in enumerate(TILES))
     label = "; ".join(f"{t.value} {t.label} ({t.sub})" for t in TILES)
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="{escape(label)}">
+<title>{escape(label)}</title>
 <style>
 .t{{opacity:0;animation:in .6s ease-out forwards}}
 @keyframes in{{from{{opacity:0;transform:translateY(6px)}}to{{opacity:1;transform:none}}}}
