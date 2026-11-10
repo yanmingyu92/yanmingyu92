@@ -42,9 +42,9 @@ flowchart LR
     S --> A["ADaM<br/>admiral · admiralagent"]
     A --> T["TLFs<br/>tlfstack · py4csr"]
     T --> E["eSubmission<br/>Define-XML · eCTD · ADRG"]
-    AI(["🤖 LLM / RAG agents<br/>with validation gates"]) -.-> A
+    AI(["🤖 LLM agents + validation gates"]) -.-> A
     AI -.-> T
-    G(["🛡️ GxP controls<br/>risk-based validation · audit trail · Part 11"]) -.-> S
+    G(["🛡️ GxP: validation · audit trail · Part 11"]) -.-> S
     G -.-> E
     classDef core fill:#0f766e,stroke:#2dd4bf,color:#ffffff
     classDef layer fill:#4c1d95,stroke:#a78bfa,color:#ffffff
