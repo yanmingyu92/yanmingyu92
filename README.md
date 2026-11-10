@@ -24,6 +24,34 @@ I lead statistical programming for clinical trials and build **open, validated t
 - 🎓 **PhD in Data Science (2026)** on AI/ML governance in clinical development. I am sole author of 4 journal papers and author of 13 PhUSE/PharmaSUG papers.
 - 🔭 **Currently exploring** digital protocols with CDISC **USDM** and ICH M11 ([usdm-toolkit](https://github.com/yanmingyu92/usdm-toolkit)).
 
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./dist/impact-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./dist/impact-light.svg">
+  <img alt="By the numbers: 9+ years in Phase 1–3; 1 FDA approval as NDA lead; 4 sole-author journal papers; 13 PhUSE/PharmaSUG papers; 85+ technical articles." src="./dist/impact-dark.svg" width="100%">
+</picture>
+</p>
+
+---
+
+### 🧭 How I work: protocol to submission
+
+```mermaid
+flowchart LR
+    P["Protocol & SAP<br/>USDM · ICH M11"] --> S["SDTM"]
+    S --> A["ADaM<br/>admiral · admiralagent"]
+    A --> T["TLFs<br/>tlfstack · py4csr"]
+    T --> E["eSubmission<br/>Define-XML · eCTD · ADRG"]
+    AI(["🤖 LLM / RAG agents<br/>with validation gates"]) -.-> A
+    AI -.-> T
+    G(["🛡️ GxP controls<br/>risk-based validation · audit trail · Part 11"]) -.-> S
+    G -.-> E
+    classDef core fill:#0f766e,stroke:#2dd4bf,color:#ffffff
+    classDef layer fill:#4c1d95,stroke:#a78bfa,color:#ffffff
+    class P,S,A,T,E core
+    class AI,G layer
+```
+
 ---
 
 ### 🔬 Featured work
@@ -85,6 +113,23 @@ Public benchmarks for clinical statistical-programming automation, plus graph-co
 </tr>
 </table>
 
+<details>
+<summary><b>More open-source work</b></summary>
+<br/>
+
+| Project | What it does |
+|---|---|
+| [rval-gateway](https://github.com/yanmingyu92/rval-gateway) | R package validation gateway: riskmetric screening, decision engine and audit chain |
+| [gxp-sce](https://github.com/yanmingyu92/gxp-sce) | *The GxP Statistical Computing Environment*: a review and practitioner's guide (CC BY-SA 4.0) |
+| [eSubmission-Benchmark](https://github.com/yanmingyu92/eSubmission-Benchmark) | Public benchmark submission package (SDTM, ADaM, Define-XML, TLFs) cited at PharmaSUG 2026 |
+| [clinical-reporting-ir](https://github.com/yanmingyu92/clinical-reporting-ir) | Typed IR schema and parity-validation harness for the Frontiers in Pharmacology paper |
+| [sop-knowledge-graph](https://github.com/yanmingyu92/sop-knowledge-graph) | Six-stage pipeline turning pharmaceutical SOPs into a knowledge graph and web explorer |
+| [posit-conf-2026-bilingual](https://github.com/yanmingyu92/posit-conf-2026-bilingual) | *Modern R in Practice / 现代 R 进阶*: a 28-chapter bilingual book with companion labs |
+| [usdm-toolkit](https://github.com/yanmingyu92/usdm-toolkit) | Toolchain for CDISC USDM / ICH M11 digital protocols |
+| [ragql-nav](https://github.com/yanmingyu92/ragql-nav) | Multi-agent framework routing natural-language clinical data questions to SQL or Neo4j |
+
+</details>
+
 ---
 
 ### 📄 Selected publications (sole author, 2026)
@@ -98,11 +143,28 @@ Public benchmarks for clinical statistical-programming automation, plus graph-co
 
 ---
 
+### ✍️ Latest writing
+
+<!-- FEED:START -->
+- [AI in Validated Environments: LLMs Inside the GxP Boundary](https://jaimeyan.com/blog/ai-in-validated-environments.html) <sub>· Nov 04, 2026</sub>
+- [Visit Windowing, Baseline, and LOCF: The Rules That Decide BDS](https://jaimeyan.com/blog/visit-windowing-baseline-locf-guide.html) <sub>· Nov 04, 2026</sub>
+- [Define-XML and the Reviewer's Guide, Explained for Programmers](https://jaimeyan.com/blog/define-xml-reviewers-guide-tutorial.html) <sub>· Oct 26, 2026</sub>
+- [How to Read a Protocol and SAP as a Statistical Programmer](https://jaimeyan.com/blog/protocol-sap-reading-guide.html) <sub>· Oct 26, 2026</sub>
+- [Git for SAS Programmers: Version Control in a GxP World](https://jaimeyan.com/blog/git-for-clinical-programmers.html) <sub>· Oct 06, 2026</sub>
+<!-- FEED:END -->
+
+<sub>From <a href="https://jaimeyan.com">jaimeyan.com</a>: 85+ practical articles on CDISC, R in pharma, GxP and LLM automation. <a href="https://jaimeyan.com/rss.xml">RSS</a></sub>
+
+---
+
 ### 🧰 Toolbox
 
-![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white) ![Shiny](https://img.shields.io/badge/Shiny-1A162D?style=flat-square&logo=rstudioide&logoColor=75AADB) ![Quarto](https://img.shields.io/badge/Quarto-39729E?style=flat-square&logo=quarto&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white) ![SAS](https://img.shields.io/badge/SAS_(certified)-0766D1?style=flat-square&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/CI%2FCD-2088FF?style=flat-square&logo=githubactions&logoColor=white) ![LLM / RAG](https://img.shields.io/badge/LLM%20%2F%20RAG-412991?style=flat-square&logo=openai&logoColor=white)
+<a href="https://skillicons.dev"><img alt="Skills: R, Python, PostgreSQL, Docker, Linux, Git, GitHub Actions, FastAPI, LaTeX, VS Code" src="https://skillicons.dev/icons?i=r,py,postgres,docker,linux,git,githubactions,fastapi,latex,vscode&perline=10"></a>
+
+![Shiny](https://img.shields.io/badge/Shiny-1A162D?style=flat-square&logo=rstudioide&logoColor=75AADB) ![Quarto](https://img.shields.io/badge/Quarto-39729E?style=flat-square&logo=quarto&logoColor=white) ![SAS](https://img.shields.io/badge/SAS_(certified)-0766D1?style=flat-square&logoColor=white) ![LLM / RAG](https://img.shields.io/badge/LLM%20%2F%20RAG-412991?style=flat-square&logo=openai&logoColor=white) ![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white)
 
 ![CDISC](https://img.shields.io/badge/CDISC-SDTM%20%C2%B7%20ADaM%20%C2%B7%20Define--XML-005A9C?style=flat-square) ![pharmaverse](https://img.shields.io/badge/pharmaverse-admiral%20%C2%B7%20rtables-E35B2F?style=flat-square) ![GxP](https://img.shields.io/badge/GxP-21%20CFR%20Part%2011%20%C2%B7%20GAMP%205-2E7D32?style=flat-square) ![Submissions](https://img.shields.io/badge/Submissions-NDA%20%C2%B7%20eCTD%20%C2%B7%20ISS%2FISE-6A1B9A?style=flat-square)
 
+<img alt="" src="./dist/footer.svg" width="100%">
 
 <sub>All demos and benchmarks use synthetic or public test data (e.g. the CDISC Pilot). Views are my own and not those of any employer.</sub>

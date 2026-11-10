@@ -1,4 +1,4 @@
-name: Refresh neofetch card
+name: Refresh profile (card + latest writing)
 
 on:
   schedule:
@@ -36,11 +36,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/generate_card.py --config neofetch.json --out dist
 
+      - name: Refresh latest writing from jaimeyan.com RSS
+        run: python scripts/update_feed.py --readme README.md --limit 5
+
       - name: Commit if changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dist/*.svg
+          git add dist/*.svg README.md
           git diff --cached --quiet && echo "No changes" && exit 0
-          git commit -m "chore: refresh neofetch card [skip ci]"
+          git commit -m "chore: refresh profile card and latest writing [skip ci]"
           git push

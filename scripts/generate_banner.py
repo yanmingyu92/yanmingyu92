@@ -120,6 +120,24 @@ def build() -> str:
 """
 
 
+def build_footer() -> str:
+    """Thin wave strip that closes the README in the banner's colours."""
+    w, h = W, 90
+    waves = []
+    for i, (amp, phase, op) in enumerate(((14, 0.0, 0.55), (10, 1.3, 0.35), (7, 2.4, 0.25))):
+        pts = " ".join(
+            f"{x},{h * 0.45 + amp * math.sin(x / w * math.tau * 1.5 + phase):.1f}" for x in range(0, w + 1, 20)
+        )
+        waves.append(f'<polygon points="0,{h} {pts} {w},{h}" fill="url(#fw)" fill-opacity="{op}"/>')
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="Decorative footer wave">
+<defs><linearGradient id="fw" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#0f2740"/><stop offset="0.6" stop-color="#14b8a6"/><stop offset="1" stop-color="#a78bfa"/>
+</linearGradient></defs>
+{''.join(waves)}
+</svg>
+"""
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--out", default="dist/banner.svg")
@@ -128,6 +146,9 @@ def main() -> int:
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(build(), encoding="utf-8")
     print(f"wrote {out} ({out.stat().st_size // 1024} KB)")
+    footer = out.with_name("footer.svg")
+    footer.write_text(build_footer(), encoding="utf-8")
+    print(f"wrote {footer}")
     return 0
 
 
