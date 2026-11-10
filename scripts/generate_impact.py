@@ -28,10 +28,10 @@ class Tile:
 
 TILES = (
     Tile("9+", "Years", "Phase 1–3 · CV & oncology", "#2dd4bf"),
-    Tile("1", "FDA approval", "NDA lead · LIPFENDRA®", "#60a5fa"),
-    Tile("4", "Journal papers", "sole author · 2026", "#a78bfa"),
-    Tile("13", "Conference papers", "PhUSE · PharmaSUG", "#f472b6"),
-    Tile("85+", "Technical articles", "jaimeyan.com", "#fbbf24"),
+    Tile("NDA", "to FDA approval", "LIPFENDRA® · Merck", "#60a5fa"),
+    Tile("Org-wide", "SAS-to-R adoption", "GenAI tooling · Merck", "#a78bfa"),
+    Tile("4 + 13", "Papers", "Journal · PhUSE/PharmaSUG", "#f472b6"),
+    Tile("2", "Free books", "Clinical R · Modern R (EN/中文)", "#fbbf24"),
 )
 
 

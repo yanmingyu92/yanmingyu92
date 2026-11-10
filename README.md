@@ -1,6 +1,6 @@
 <div align="center">
 
-<img alt="Jaime Yan, PhD — Clinical Data Science · Statistical Programming Leader. Kaplan-Meier curves and a DNA helix of data points." src="./dist/banner.svg" width="100%">
+<img alt="Jaime Yan, PhD — Clinical Data Science · Statistical Programming Leader. Kaplan-Meier survival curves." src="./dist/banner.svg" width="100%">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./dist/neofetch-dark.svg">
@@ -16,13 +16,13 @@
 
 ### Hi, I'm Jaime 👋
 
-I lead statistical programming for clinical trials and build **open, validated tooling for clinical data science**. I care most about analytics that regulators and reviewers can trust: reproducible R and Python pipelines, CDISC-native data, and AI that runs inside the GxP boundary rather than around it.
+I lead clinical data science and statistical programming teams, and I help organizations move to **open-source R and Python analytics that regulators can trust**: reproducible pipelines, CDISC-native data, and AI that runs inside the GxP boundary rather than around it.
 
-- 🏛️ **Associate Director, Statistical Programming @ Kardigan.** I lead programming for the tonlamarsen cardiovascular program and run a 21-service governed clinical analytics platform.
-- 💊 **At Merck,** I was NDA statistical programming lead for **LIPFENDRA® (enlicitide)** from Phase 2b through the pivotal CORALreef program. It was FDA-approved in July 2026.
-- 🤖 I architected an enterprise **GenAI (LLM/RAG) platform**; its SAS-to-R conversion tooling was adopted organization-wide.
-- 🎓 **PhD in Data Science (2026)** on AI/ML governance in clinical development. I am sole author of 4 journal papers and author of 13 PhUSE/PharmaSUG papers.
-- 🔭 **Currently exploring** digital protocols with CDISC **USDM** and ICH M11 ([usdm-toolkit](https://github.com/yanmingyu92/usdm-toolkit)).
+- **Associate Director, Statistical Programming @ Kardigan.** I manage a programming team, lead statistical programming for the tonlamarsen cardiovascular program, and architected (with IT and QA) a governed clinical analytics platform, from validation framework to user training and adoption.
+- **At Merck, I helped drive the move to R.** I architected an enterprise GenAI (LLM/RAG) platform whose SAS-to-R conversion tooling was adopted organization-wide.
+- **At Merck,** I also led statistical programming for **LIPFENDRA® (enlicitide)** from Phase 2b through the pivotal Phase 3 CORALreef program and owned the NDA eSubmission packages (Define-XML, eCTD, ADRG). FDA approval: July 2026.
+- **PhD in Data Science (2026)**, with research on AI/ML governance, validation and automation in clinical development.
+- **Currently exploring** digital protocols with CDISC USDM and ICH M11 ([usdm-toolkit](https://github.com/yanmingyu92/usdm-toolkit)).
 
 <p align="center">
 <picture>
@@ -34,7 +34,7 @@ I lead statistical programming for clinical trials and build **open, validated t
 
 ---
 
-### 🧭 How I work: protocol to submission
+### What my teams deliver: protocol to submission
 
 ```mermaid
 flowchart LR
@@ -46,26 +46,26 @@ flowchart LR
     AI -.-> T
     G(["🛡️ GxP: validation · audit trail · Part 11"]) -.-> S
     G -.-> E
+    L(["👥 People · SOPs · CRO oversight · training"]) -.-> S
+    L -.-> T
     classDef core fill:#0f766e,stroke:#2dd4bf,color:#ffffff
     classDef layer fill:#4c1d95,stroke:#a78bfa,color:#ffffff
     class P,S,A,T,E core
-    class AI,G layer
+    class AI,G,L layer
 ```
 
 ---
 
-### 🔬 Featured work
+### Featured work
 
 <table>
 <tr>
 <td width="33%" valign="top">
 
-**[py4csr](https://github.com/yanmingyu92/py4csr)**
-<sub>Python · MIT · on PyPI</sub>
+**[clinical-r-in-practice](https://yanmingyu92.github.io/clinical-r-in-practice/)**
+<sub>Quarto book · CC BY-SA 4.0</sub>
 
-A Python framework for clinical study reporting: CDISC-aware tables, listings and figures for CSRs.
-
-`pip install py4csr`
+A free 15-chapter book on the open-source R stack in regulated drug development: pharmaverse, ADaM, ARD, validation and LLM agents.
 
 </td>
 <td width="33%" valign="top">
@@ -78,31 +78,33 @@ A governance and validation template for R/Shiny in GxP settings: roles, control
 </td>
 <td width="33%" valign="top">
 
-**[clinical-figure-library](https://github.com/yanmingyu92/clinical-figure-library)**
-<sub>R + Python · source-available</sub>
-
-Reproducible clinical trial figure templates (forest, waterfall, KM and more) with synthetic data and independent numerical QC. [Live gallery →](https://jaimeyan.com/lab/figures.html)
-
-</td>
-</tr>
-<tr>
-<td valign="top">
-
-**[clinical-r-in-practice](https://yanmingyu92.github.io/clinical-r-in-practice/)**
-<sub>Quarto book · CC BY-SA 4.0</sub>
-
-A free 15-chapter book on the open-source R stack in regulated drug development: pharmaverse, ADaM, ARD, validation and LLM agents.
-
-</td>
-<td valign="top">
-
 **[admiralagent](https://github.com/yanmingyu92/admiralagent)** · **[tlfstack](https://github.com/yanmingyu92/tlfstack)**
 <sub>R packages · r-universe</sub>
 
 Spec-driven ADaM code generation with LLM-translated layers, and convention-driven RTF TLFs with one code path for batch and interactive use.
 
 </td>
-<td valign="top">
+</tr>
+<tr>
+<td width="33%" valign="top">
+
+**[clinical-figure-library](https://github.com/yanmingyu92/clinical-figure-library)**
+<sub>R + Python · source-available</sub>
+
+Reproducible clinical trial figure templates (forest, waterfall, KM and more) with synthetic data and independent numerical QC. [Live gallery →](https://jaimeyan.com/lab/figures.html)
+
+</td>
+<td width="33%" valign="top">
+
+**[py4csr](https://github.com/yanmingyu92/py4csr)**
+<sub>Python · MIT · on PyPI</sub>
+
+A Python framework for clinical study reporting: CDISC-aware tables, listings and figures for CSRs.
+
+`pip install py4csr`
+
+</td>
+<td width="33%" valign="top">
 
 **[clinprog-bench](https://github.com/yanmingyu92/clinprog-bench)** · **[CAVE-Onc](https://github.com/yanmingyu92/CAVE-Onc-Benchmark)**
 <sub>Benchmarks · Python</sub>
@@ -132,7 +134,7 @@ Public benchmarks for clinical statistical-programming automation, plus graph-co
 
 ---
 
-### 📄 Selected publications (sole author, 2026)
+### Selected publications (sole author, 2026)
 
 - *Workflow topology–guided skill loading for agentic AI in clinical trial data pipelines: sequential exploratory evaluation.* **JMIR Formative Research**, 2026. [doi:10.2196/100769](https://doi.org/10.2196/100769)
 - *A non-destructive methodological framework for modernizing legacy clinical reporting systems for AI-driven pharmacoinformatics: a SAS case study.* **Frontiers in Pharmacology**, 2026. [doi:10.3389/fphar.2026.1876207](https://doi.org/10.3389/fphar.2026.1876207) · [code](https://github.com/yanmingyu92/clinical-reporting-ir)
@@ -143,7 +145,7 @@ Public benchmarks for clinical statistical-programming automation, plus graph-co
 
 ---
 
-### ✍️ Latest writing
+### Latest writing
 
 <!-- FEED:START -->
 - [AI in Validated Environments: LLMs Inside the GxP Boundary](https://jaimeyan.com/blog/ai-in-validated-environments.html) <sub>· Nov 04, 2026</sub>
@@ -153,13 +155,13 @@ Public benchmarks for clinical statistical-programming automation, plus graph-co
 - [Git for SAS Programmers: Version Control in a GxP World](https://jaimeyan.com/blog/git-for-clinical-programmers.html) <sub>· Oct 06, 2026</sub>
 <!-- FEED:END -->
 
-<sub>From <a href="https://jaimeyan.com">jaimeyan.com</a>: 85+ practical articles on CDISC, R in pharma, GxP and LLM automation. <a href="https://jaimeyan.com/rss.xml">RSS</a></sub>
+<sub>From <a href="https://jaimeyan.com">jaimeyan.com</a>: practical articles on CDISC, R in pharma, GxP and LLM automation. <a href="https://jaimeyan.com/rss.xml">RSS</a></sub>
 
 ---
 
-### 🧰 Toolbox
+### Toolbox
 
-<a href="https://skillicons.dev"><img alt="Skills: R, Python, PostgreSQL, Docker, Linux, Git, GitHub Actions, FastAPI, LaTeX, VS Code" src="https://skillicons.dev/icons?i=r,py,postgres,docker,linux,git,githubactions,fastapi,latex,vscode&perline=10"></a>
+<a href="https://skillicons.dev"><img alt="Skills: R, Python, PostgreSQL, Docker, Linux, Git, GitHub Actions" src="https://skillicons.dev/icons?i=r,py,postgres,docker,linux,git,githubactions&perline=10"></a>
 
 ![Shiny](https://img.shields.io/badge/Shiny-1A162D?style=flat-square&logo=rstudioide&logoColor=75AADB) ![Quarto](https://img.shields.io/badge/Quarto-39729E?style=flat-square&logo=quarto&logoColor=white) ![SAS](https://img.shields.io/badge/SAS_(certified)-0766D1?style=flat-square&logoColor=white) ![LLM / RAG](https://img.shields.io/badge/LLM%20%2F%20RAG-412991?style=flat-square&logo=openai&logoColor=white) ![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white)
 

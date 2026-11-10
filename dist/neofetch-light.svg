@@ -33,34 +33,35 @@
 <text x="28" y="546.0" textLength="369.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve"><tspan fill="#786060">*</tspan><tspan fill="#787878">+</tspan><tspan fill="#786060">**</tspan><tspan fill="#787860">*</tspan><tspan fill="#786060">**</tspan><tspan fill="#484848">#</tspan><tspan fill="#786060">********</tspan><tspan fill="#604848">#</tspan><tspan fill="#606060">*</tspan><tspan fill="#604848">*</tspan><tspan fill="#909090">=</tspan><tspan fill="#a8a8a8">.....</tspan><tspan fill="#a890a8">-</tspan><tspan fill="#606060">**</tspan><tspan fill="#484848">#</tspan><tspan fill="#786060">**</tspan><tspan fill="#787860">*</tspan><tspan fill="#786060">**</tspan><tspan fill="#787860">*</tspan><tspan fill="#786060">*</tspan><tspan fill="#787860">**</tspan><tspan fill="#786060">*****</tspan><tspan fill="#787860">*</tspan></text>
 <text x="28" y="564.0" textLength="369.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve"><tspan fill="#786060">*</tspan><tspan fill="#787860">*</tspan><tspan fill="#786060">****</tspan><tspan fill="#787860">*</tspan><tspan fill="#604848">##</tspan><tspan fill="#787878">+</tspan><tspan fill="#786060">******</tspan><tspan fill="#604848">#</tspan><tspan fill="#606060">**</tspan><tspan fill="#604848">#</tspan><tspan fill="#a890a8">=</tspan><tspan fill="#90a8a8">.</tspan><tspan fill="#a8a8a8">.</tspan><tspan fill="#90a8a8">.</tspan><tspan fill="#a8a8a8">-</tspan><tspan fill="#606060">*</tspan><tspan fill="#786060">*</tspan><tspan fill="#604848">##</tspan><tspan fill="#787878">+</tspan><tspan fill="#786060">******</tspan><tspan fill="#787860">*</tspan><tspan fill="#786060">****</tspan><tspan fill="#787860">*</tspan><tspan fill="#786060">**</tspan></text>
 <text x="28" y="582.0" textLength="369.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve"><tspan fill="#604848">#</tspan><tspan fill="#786060">*******</tspan><tspan fill="#484830">#</tspan><tspan fill="#786060">*******</tspan><tspan fill="#604848">*</tspan><tspan fill="#606048">*</tspan><tspan fill="#606060">**</tspan><tspan fill="#604848">#</tspan><tspan fill="#a8a8a8">-</tspan><tspan fill="#90a8a8">.</tspan><tspan fill="#a890a8">=</tspan><tspan fill="#606060">***</tspan><tspan fill="#484830">#</tspan><tspan fill="#606060">*</tspan><tspan fill="#787878">+</tspan><tspan fill="#786060">*****</tspan><tspan fill="#787878">+</tspan><tspan fill="#786060">********</tspan></text>
-<text x="431.6" y="96.0"><tspan fill="#1a7f37" font-weight="700">jaime</tspan><tspan fill="#24292f">@</tspan><tspan fill="#1a7f37" font-weight="700">yanmingyu92</tspan></text>
-<text x="431.6" y="114.0" fill="#57606a">-----------------</text>
-<text x="431.6" y="132.0"><tspan fill="#0969da" font-weight="700">Name</tspan><tspan fill="#24292f">: Jaime (Mingyu) Yan, PhD</tspan></text>
-<text x="431.6" y="150.0"><tspan fill="#0969da" font-weight="700">Role</tspan><tspan fill="#24292f">: Assoc. Director, Statistical Programming @ Kardigan</tspan></text>
-<text x="431.6" y="168.0"><tspan fill="#0969da" font-weight="700">Previously</tspan><tspan fill="#24292f">: Merck · Regeneron · Boehringer Ingelheim</tspan></text>
-<text x="431.6" y="186.0"><tspan fill="#0969da" font-weight="700">Uptime</tspan><tspan fill="#24292f">: 9+ years · Phase 1-3 · cardiovascular &amp; oncology</tspan></text>
-<text x="431.6" y="204.0"><tspan fill="#0969da" font-weight="700">Milestone</tspan><tspan fill="#24292f">: NDA programming lead, LIPFENDRA® (FDA, Jul 2026)</tspan></text>
-<text x="431.6" y="222.0"><tspan fill="#0969da" font-weight="700">Focus</tspan><tspan fill="#24292f">: Clinical data science · GxP analytics · LLM/RAG</tspan></text>
-<text x="431.6" y="258.0"><tspan fill="#0969da" font-weight="700">Languages</tspan><tspan fill="#24292f">: R · Python · SQL · SAS</tspan></text>
-<text x="431.6" y="276.0"><tspan fill="#0969da" font-weight="700">Stack</tspan><tspan fill="#24292f">: Shiny · pharmaverse · Quarto · Docker · CI/CD</tspan></text>
-<text x="431.6" y="294.0"><tspan fill="#0969da" font-weight="700">Standards</tspan><tspan fill="#24292f">: CDISC SDTM/ADaM · Define-XML · Part 11 · GAMP 5</tspan></text>
-<text x="431.6" y="312.0"><tspan fill="#0969da" font-weight="700">Packages</tspan><tspan fill="#24292f">: py4csr (PyPI) · admiralagent · tlfstack</tspan></text>
-<text x="431.6" y="330.0"><tspan fill="#0969da" font-weight="700">Papers</tspan><tspan fill="#24292f">: 4 sole-authored journal (2026) · 13 PhUSE/PharmaSUG</tspan></text>
-<text x="431.6" y="348.0"><tspan fill="#0969da" font-weight="700">Education</tspan><tspan fill="#24292f">: PhD Data Science, Harrisburg University (2026)</tspan></text>
-<text x="431.6" y="384.0"><tspan fill="#1a7f37" font-weight="700">- Contact </tspan><tspan fill="#57606a">------------------------------------------------</tspan></text>
-<text x="431.6" y="402.0"><tspan fill="#0969da" font-weight="700">Web</tspan><tspan fill="#24292f">: jaimeyan.com</tspan></text>
-<text x="431.6" y="420.0"><tspan fill="#0969da" font-weight="700">LinkedIn</tspan><tspan fill="#24292f">: linkedin.com/in/jaime-y-66312a133</tspan></text>
-<text x="431.6" y="438.0"><tspan fill="#0969da" font-weight="700">Scholar</tspan><tspan fill="#24292f">: scholar.google.com · Jaime Yan</tspan></text>
-<text x="431.6" y="474.0"><tspan fill="#1a7f37" font-weight="700">- GitHub </tspan><tspan fill="#57606a">-------------------------------------------------</tspan></text>
-<text x="431.6" y="492.0"><tspan fill="#0969da" font-weight="700">Public repos</tspan><tspan fill="#24292f">: 31</tspan></text>
-<text x="431.6" y="510.0"><tspan fill="#0969da" font-weight="700">Stars</tspan><tspan fill="#24292f">: 32</tspan></text>
-<text x="431.6" y="528.0"><tspan fill="#0969da" font-weight="700">Contributions</tspan><tspan fill="#24292f">: 170 (last 12 months)</tspan></text>
-<rect x="431.6" y="552.0" width="24" height="14" rx="2" fill="#484f58"/>
-<rect x="457.6" y="552.0" width="24" height="14" rx="2" fill="#ff7b72"/>
-<rect x="483.6" y="552.0" width="24" height="14" rx="2" fill="#3fb950"/>
-<rect x="509.6" y="552.0" width="24" height="14" rx="2" fill="#d29922"/>
-<rect x="535.6" y="552.0" width="24" height="14" rx="2" fill="#58a6ff"/>
-<rect x="561.6" y="552.0" width="24" height="14" rx="2" fill="#bc8cff"/>
-<rect x="587.6" y="552.0" width="24" height="14" rx="2" fill="#39c5cf"/>
-<rect x="613.6" y="552.0" width="24" height="14" rx="2" fill="#b1bac4"/>
+<text x="431.6" y="87.0"><tspan fill="#1a7f37" font-weight="700">jaime</tspan><tspan fill="#24292f">@</tspan><tspan fill="#1a7f37" font-weight="700">yanmingyu92</tspan></text>
+<text x="431.6" y="105.0" fill="#57606a">-----------------</text>
+<text x="431.6" y="123.0"><tspan fill="#0969da" font-weight="700">Name</tspan><tspan fill="#24292f">: Jaime (Mingyu) Yan, PhD</tspan></text>
+<text x="431.6" y="141.0"><tspan fill="#0969da" font-weight="700">Role</tspan><tspan fill="#24292f">: Assoc. Director, Statistical Programming @ Kardigan</tspan></text>
+<text x="431.6" y="159.0"><tspan fill="#0969da" font-weight="700">Previously</tspan><tspan fill="#24292f">: Merck · Regeneron · Boehringer Ingelheim</tspan></text>
+<text x="431.6" y="177.0"><tspan fill="#0969da" font-weight="700">Experience</tspan><tspan fill="#24292f">: 9+ years · Phase 1-3 · cardiovascular &amp; oncology</tspan></text>
+<text x="431.6" y="195.0"><tspan fill="#0969da" font-weight="700">Milestone</tspan><tspan fill="#24292f">: Led stat programming, LIPFENDRA® NDA (FDA 2026)</tspan></text>
+<text x="431.6" y="213.0"><tspan fill="#0969da" font-weight="700">Focus</tspan><tspan fill="#24292f">: Data science leadership · R adoption · GxP AI</tspan></text>
+<text x="431.6" y="231.0"><tspan fill="#0969da" font-weight="700">Team</tspan><tspan fill="#24292f">: Line manager · SOP author · CRO/vendor oversight</tspan></text>
+<text x="431.6" y="267.0"><tspan fill="#0969da" font-weight="700">Languages</tspan><tspan fill="#24292f">: R · Python · SQL · SAS</tspan></text>
+<text x="431.6" y="285.0"><tspan fill="#0969da" font-weight="700">Stack</tspan><tspan fill="#24292f">: Shiny · pharmaverse · Quarto · Docker · CI/CD</tspan></text>
+<text x="431.6" y="303.0"><tspan fill="#0969da" font-weight="700">Standards</tspan><tspan fill="#24292f">: CDISC SDTM/ADaM · Define-XML · Part 11 · GAMP 5</tspan></text>
+<text x="431.6" y="321.0"><tspan fill="#0969da" font-weight="700">Packages</tspan><tspan fill="#24292f">: py4csr (PyPI) · admiralagent · tlfstack</tspan></text>
+<text x="431.6" y="339.0"><tspan fill="#0969da" font-weight="700">Papers</tspan><tspan fill="#24292f">: 4 sole-authored journal (2026) · 13 PhUSE/PharmaSUG</tspan></text>
+<text x="431.6" y="357.0"><tspan fill="#0969da" font-weight="700">Education</tspan><tspan fill="#24292f">: PhD Data Science, Harrisburg University (2026)</tspan></text>
+<text x="431.6" y="393.0"><tspan fill="#1a7f37" font-weight="700">- Contact </tspan><tspan fill="#57606a">------------------------------------------------</tspan></text>
+<text x="431.6" y="411.0"><tspan fill="#0969da" font-weight="700">Web</tspan><tspan fill="#24292f">: jaimeyan.com</tspan></text>
+<text x="431.6" y="429.0"><tspan fill="#0969da" font-weight="700">LinkedIn</tspan><tspan fill="#24292f">: linkedin.com/in/jaime-y-66312a133</tspan></text>
+<text x="431.6" y="447.0"><tspan fill="#0969da" font-weight="700">Scholar</tspan><tspan fill="#24292f">: scholar.google.com · Jaime Yan</tspan></text>
+<text x="431.6" y="483.0"><tspan fill="#1a7f37" font-weight="700">- GitHub </tspan><tspan fill="#57606a">-------------------------------------------------</tspan></text>
+<text x="431.6" y="501.0"><tspan fill="#0969da" font-weight="700">Public repos</tspan><tspan fill="#24292f">: 31</tspan></text>
+<text x="431.6" y="519.0"><tspan fill="#0969da" font-weight="700">Stars</tspan><tspan fill="#24292f">: 32</tspan></text>
+<text x="431.6" y="537.0"><tspan fill="#0969da" font-weight="700">Contributions</tspan><tspan fill="#24292f">: 174 (last 12 months)</tspan></text>
+<rect x="431.6" y="561.0" width="24" height="14" rx="2" fill="#484f58"/>
+<rect x="457.6" y="561.0" width="24" height="14" rx="2" fill="#ff7b72"/>
+<rect x="483.6" y="561.0" width="24" height="14" rx="2" fill="#3fb950"/>
+<rect x="509.6" y="561.0" width="24" height="14" rx="2" fill="#d29922"/>
+<rect x="535.6" y="561.0" width="24" height="14" rx="2" fill="#58a6ff"/>
+<rect x="561.6" y="561.0" width="24" height="14" rx="2" fill="#bc8cff"/>
+<rect x="587.6" y="561.0" width="24" height="14" rx="2" fill="#39c5cf"/>
+<rect x="613.6" y="561.0" width="24" height="14" rx="2" fill="#b1bac4"/>
 </g></svg>
