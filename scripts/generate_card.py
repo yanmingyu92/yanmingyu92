@@ -35,7 +35,7 @@ CHAR_W = 8.4
 LINE_H = 18
 PAD = 28
 ASCII_GAP = 34
-INFO_COLS = 66
+INFO_COLS = 56
 COLOR_STEP = 24  # colour quantisation keeps the SVG small
 
 FONT_STACK = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
@@ -52,17 +52,22 @@ class Theme:
     title: str
     prompt: str
     ascii_dense_is_bright: bool
+    ascii_floor: float  # min brightness kept for ASCII glyphs (dark theme)
+    ascii_ceil: float  # max brightness kept for ASCII glyphs (light theme)
+    swatches: tuple[str, ...]
 
 
+# Accents match the banner (teal / violet) and keep >= 4.5:1 contrast.
 THEMES = (
     Theme("dark", "#0d1117", "#30363d", "#c9d1d9", "#8b949e",
-          "#58a6ff", "#7ee787", "#d2a8ff", True),
+          "#5eead4", "#a78bfa", "#c4b5fd", True, 0.45, 1.0,
+          ("#484f58", "#ff7b72", "#3fb950", "#d29922",
+           "#58a6ff", "#bc8cff", "#39c5cf", "#b1bac4")),
     Theme("light", "#ffffff", "#d0d7de", "#24292f", "#57606a",
-          "#0969da", "#1a7f37", "#8250df", False),
+          "#0f766e", "#6d28d9", "#6d28d9", False, 0.0, 0.48,
+          ("#6e7781", "#cf222e", "#1a7f37", "#9a6700",
+           "#0969da", "#8250df", "#1b7c83", "#424a53")),
 )
-
-PALETTE = ("#484f58", "#ff7b72", "#3fb950", "#d29922",
-           "#58a6ff", "#bc8cff", "#39c5cf", "#b1bac4")
 
 
 # --------------------------------------------------------------------------
@@ -119,8 +124,7 @@ def _cell(rgb: tuple[int, int, int], theme: Theme) -> tuple[str, str]:
     level = lum if theme.ascii_dense_is_bright else 1 - lum
     char = RAMP[min(len(RAMP) - 1, int(level * len(RAMP)))]
     # Keep very dark (or very light) pixels visible against the card.
-    floor = 0.35 if theme.ascii_dense_is_bright else 0.0
-    ceil = 1.0 if theme.ascii_dense_is_bright else 0.62
+    floor, ceil = theme.ascii_floor, theme.ascii_ceil
     scale = max(floor, min(ceil, lum)) / max(lum, 1e-3)
     r, g, b = (_quantise(min(255, int(c * scale))) for c in rgb)
     return char, f"#{r:02x}{g:02x}{b:02x}"
@@ -224,7 +228,7 @@ def _render_info(lines, x: float, y0: float, theme: Theme) -> list[str]:
             out.append(f'<text x="{x}" y="{y}"><tspan fill="{theme.key}" font-weight="700">{escape(line[1])}</tspan>'
                        f'<tspan fill="{theme.text}">: {escape(line[2])}</tspan></text>')
         elif kind == "palette":
-            for j, colour in enumerate(PALETTE):
+            for j, colour in enumerate(theme.swatches):
                 out.append(f'<rect x="{x + j * 26}" y="{y - 12}" width="24" height="14" rx="2" fill="{colour}"/>')
     return out
 
@@ -259,7 +263,7 @@ def render_svg(cfg: dict, img, mask, stats: dict[str, str], theme: Theme) -> str
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}" role="img" aria-label="Neofetch-style profile card for {escape(cfg["title"])}">',
         "<style>.c{animation:b 1.1s steps(1) infinite}@keyframes b{50%{opacity:0}}</style>",
-        f'<rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="10" fill="{theme.bg}" stroke="{theme.border}"/>',
+        f'<rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="12" fill="{theme.bg}" stroke="{theme.border}"/>',
         f'<g font-family="{FONT_STACK}" font-size="{FONT_SIZE}">',
         f'<text x="{PAD}" y="{prompt_y}" fill="{theme.prompt}" textLength="{len(cfg.get("prompt", "")) * CHAR_W:.1f}" '
         f'lengthAdjust="spacingAndGlyphs">{prompt}</text>',

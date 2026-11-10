@@ -28,7 +28,7 @@ I lead clinical data science and statistical programming teams, and I help organ
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./dist/impact-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./dist/impact-light.svg">
-  <img alt="By the numbers: 9+ years in Phase 1–3; 1 FDA approval as NDA lead; 4 sole-author journal papers; 13 PhUSE/PharmaSUG papers; 85+ technical articles." src="./dist/impact-dark.svg" width="100%">
+  <img alt="By the numbers: 9+ years in Phase 1–3; 1 FDA approval as NDA lead; 4 sole-author journal papers; 13 PhUSE/PharmaSUG papers; 85+ technical articles." src="./dist/impact-dark.svg" width="640">
 </picture>
 </p>
 
@@ -37,7 +37,7 @@ I lead clinical data science and statistical programming teams, and I help organ
 ### What my teams deliver: protocol to submission
 
 ```mermaid
-flowchart LR
+flowchart TB
     P["Protocol & SAP<br/>USDM · ICH M11"] --> S["SDTM"]
     S --> A["ADaM<br/>admiral · admiralagent"]
     A --> T["TLFs<br/>tlfstack · py4csr"]

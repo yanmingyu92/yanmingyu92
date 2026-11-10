@@ -1,7 +1,8 @@
 """Generate the "by the numbers" impact tiles (dark and light SVG).
 
-Each tile shows one career metric. Tiles fade in one after another on load
-(disabled under prefers-reduced-motion). Edit TILES to update the numbers.
+Each tile shows one career metric, laid out as a 3 + 2 grid so the text
+stays legible on mobile. Tiles fade in one after another on load (disabled
+under prefers-reduced-motion). Edit TILES to update the numbers.
 
 Usage:
     python scripts/generate_impact.py [--out dist]
@@ -15,7 +16,9 @@ from html import escape
 from pathlib import Path
 
 SANS = "'Segoe UI',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif"
-TILE_W, TILE_H, GAP = 188, 112, 14
+TILE_W, TILE_H, GAP = 200, 112, 20
+PER_ROW = 3
+WIDTH = PER_ROW * TILE_W + (PER_ROW - 1) * GAP
 
 
 @dataclass(frozen=True)
@@ -23,15 +26,16 @@ class Tile:
     value: str
     label: str
     sub: str
-    accent: str
+    accent_dark: str
+    accent_light: str  # >= 4.5:1 on the light card
 
 
 TILES = (
-    Tile("9+", "Years", "Phase 1–3 · CV & oncology", "#2dd4bf"),
-    Tile("NDA", "to FDA approval", "LIPFENDRA® · Merck", "#60a5fa"),
-    Tile("Org-wide", "SAS-to-R adoption", "GenAI tooling · Merck", "#a78bfa"),
-    Tile("4 + 13", "Papers", "Journal · PhUSE/PharmaSUG", "#f472b6"),
-    Tile("2", "Free books", "Clinical R · Modern R (EN/中文)", "#fbbf24"),
+    Tile("9+", "Years", "Phase 1–3 · CV & oncology", "#2dd4bf", "#0f766e"),
+    Tile("NDA", "to FDA approval", "LIPFENDRA® · Merck", "#60a5fa", "#1d4ed8"),
+    Tile("Org-wide", "SAS-to-R adoption", "GenAI tooling · Merck", "#a78bfa", "#6d28d9"),
+    Tile("4 + 13", "Papers", "Journal · PhUSE/PharmaSUG", "#f472b6", "#be185d"),
+    Tile("2", "Free books", "Clinical R · Modern R (EN/中文)", "#fbbf24", "#b45309"),
 )
 
 
@@ -51,23 +55,33 @@ PALETTES = (
 )
 
 
+def tile_origin(i: int, count: int) -> tuple[float, float]:
+    """Top-left corner of tile i; a short last row is centred."""
+    row, col = divmod(i, PER_ROW)
+    in_row = min(PER_ROW, count - row * PER_ROW)
+    row_w = in_row * TILE_W + (in_row - 1) * GAP
+    return (WIDTH - row_w) / 2 + col * (TILE_W + GAP), row * (TILE_H + GAP)
+
+
 def tile_svg(i: int, tile: Tile, pal: Palette) -> str:
-    x = i * (TILE_W + GAP)
+    x, y = tile_origin(i, len(TILES))
     cx = x + TILE_W / 2
+    accent = tile.accent_dark if pal.name == "dark" else tile.accent_light
     return f"""<g class="t" style="animation-delay:{0.12 * i:.2f}s">
-<rect x="{x + 0.5}" y="0.5" width="{TILE_W - 1}" height="{TILE_H - 1}" rx="12" fill="{pal.card}" stroke="{pal.border}"/>
-<rect x="{x + 18}" y="0.5" width="{TILE_W - 36}" height="3" rx="1.5" fill="{tile.accent}"/>
-<text x="{cx}" y="50" text-anchor="middle" font-size="34" font-weight="700" fill="{tile.accent}">{escape(tile.value)}</text>
-<text x="{cx}" y="76" text-anchor="middle" font-size="14" font-weight="600" fill="{pal.label}">{escape(tile.label)}</text>
-<text x="{cx}" y="96" text-anchor="middle" font-size="11.5" fill="{pal.sub}">{escape(tile.sub)}</text>
+<rect x="{x + 0.5}" y="{y + 0.5}" width="{TILE_W - 1}" height="{TILE_H - 1}" rx="12" fill="{pal.card}" stroke="{pal.border}"/>
+<rect x="{x + 18}" y="{y + 0.5}" width="{TILE_W - 36}" height="3" rx="1.5" fill="{accent}"/>
+<text x="{cx}" y="{y + 46}" text-anchor="middle" font-size="32" font-weight="700" fill="{accent}">{escape(tile.value)}</text>
+<text x="{cx}" y="{y + 74}" text-anchor="middle" font-size="16" font-weight="600" fill="{pal.label}">{escape(tile.label)}</text>
+<text x="{cx}" y="{y + 96}" text-anchor="middle" font-size="13" fill="{pal.sub}">{escape(tile.sub)}</text>
 </g>"""
 
 
 def build(pal: Palette) -> str:
-    width = len(TILES) * TILE_W + (len(TILES) - 1) * GAP
+    rows = -(-len(TILES) // PER_ROW)
+    width, height = WIDTH, rows * TILE_H + (rows - 1) * GAP
     tiles = "\n".join(tile_svg(i, t, pal) for i, t in enumerate(TILES))
     label = "; ".join(f"{t.value} {t.label} ({t.sub})" for t in TILES)
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{TILE_H}" viewBox="0 0 {width} {TILE_H}" role="img" aria-label="{escape(label)}">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="{escape(label)}">
 <style>
 .t{{opacity:0;animation:in .6s ease-out forwards}}
 @keyframes in{{from{{opacity:0;transform:translateY(6px)}}to{{opacity:1;transform:none}}}}

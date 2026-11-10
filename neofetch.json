@@ -5,17 +5,17 @@
   "image": {
     "path": "assets/portrait.jpg",
     "crop": [170, 40, 1084, 1254],
-    "cols": 44,
+    "cols": 36,
     "remove_background": true
   },
   "sections": [
     {
       "fields": [
         ["Name", "Jaime (Mingyu) Yan, PhD"],
-        ["Role", "Assoc. Director, Statistical Programming @ Kardigan"],
+        ["Role", "Assoc. Director, Stat Programming @ Kardigan"],
         ["Previously", "Merck · Regeneron · Boehringer Ingelheim"],
-        ["Experience", "9+ years · Phase 1-3 · cardiovascular & oncology"],
-        ["Milestone", "Led stat programming, LIPFENDRA® NDA (FDA 2026)"],
+        ["Experience", "9+ years · Phase 1-3 · CV & oncology"],
+        ["Milestone", "Led stat programming, LIPFENDRA® NDA"],
         ["Focus", "Data science leadership · R adoption · GxP AI"],
         ["Team", "Line manager · SOP author · CRO/vendor oversight"]
       ]
@@ -24,18 +24,10 @@
       "fields": [
         ["Languages", "R · Python · SQL · SAS"],
         ["Stack", "Shiny · pharmaverse · Quarto · Docker · CI/CD"],
-        ["Standards", "CDISC SDTM/ADaM · Define-XML · Part 11 · GAMP 5"],
+        ["Standards", "SDTM/ADaM · Define-XML · Part 11 · GAMP 5"],
         ["Packages", "py4csr (PyPI) · admiralagent · tlfstack"],
-        ["Papers", "4 sole-authored journal (2026) · 13 PhUSE/PharmaSUG"],
-        ["Education", "PhD Data Science, Harrisburg University (2026)"]
-      ]
-    },
-    {
-      "title": "Contact",
-      "fields": [
-        ["Web", "jaimeyan.com"],
-        ["LinkedIn", "linkedin.com/in/jaime-y-66312a133"],
-        ["Scholar", "scholar.google.com · Jaime Yan"]
+        ["Papers", "4 journal (sole author) · 13 PhUSE/PharmaSUG"],
+        ["Education", "PhD Data Science, Harrisburg U (2026)"]
       ]
     }
   ],

@@ -95,26 +95,26 @@ def build() -> str:
 @keyframes f{{to{{opacity:1}}}}
 @media (prefers-reduced-motion:reduce){{.draw{{animation:none;stroke-dashoffset:0}}.fade{{animation:none;opacity:1}}}}
 </style>
-<rect width="{W}" height="{H}" rx="14" fill="url(#bg)"/>
-<rect width="{W}" height="{H}" rx="14" fill="url(#g)"/>
-<rect width="{W}" height="{H}" rx="14" fill="url(#glow)"/>
+<rect width="{W}" height="{H}" rx="12" fill="url(#bg)"/>
+<rect width="{W}" height="{H}" rx="12" fill="url(#g)"/>
+<rect width="{W}" height="{H}" rx="12" fill="url(#glow)"/>
 <g opacity="0.9">{''.join(helix(600, 1180, 268, 14, 64))}</g>
 {axis}
 <path d="{arm_a}" fill="none" stroke="#2dd4bf" stroke-width="2.6" class="draw"/>
 <path d="{arm_b}" fill="none" stroke="#a78bfa" stroke-width="2.6" class="draw b"/>
 {ticks(ticks_a, '#2dd4bf')}{ticks(ticks_b, '#a78bfa')}
-<g font-family="{MONO}" font-size="11" fill="#94a3b8" class="fade">
-<text x="{px1 - 150}" y="{py0 + 4}"><tspan fill="#2dd4bf">━</tspan> Treatment  <tspan fill="#a78bfa">━</tspan> Control</text>
+<g font-family="{MONO}" font-size="14" fill="#94a3b8" class="fade">
+<text x="{px1 - 190}" y="{py0 + 4}"><tspan fill="#2dd4bf">━</tspan> Treatment  <tspan fill="#a78bfa">━</tspan> Control</text>
 </g>
 <g font-family="{SANS}">
 <text x="56" y="112" font-size="50" font-weight="700" fill="#f8fafc">Jaime Yan, PhD</text>
 <text x="58" y="150" font-size="20" fill="#cbd5e1">Clinical Data Science · Statistical Programming Leader</text>
-<text x="58" y="182" font-size="15" fill="#94a3b8">From protocol to submission: reproducible, validated, AI-assisted.</text>
+<text x="58" y="184" font-size="18" fill="#a5b4c8">Reproducible, compliant, AI-assisted analytics.</text>
 </g>
-<g font-family="{MONO}" font-size="13">
-<rect x="56" y="210" width="452" height="34" rx="8" fill="#0b1220" fill-opacity="0.55" stroke="#2dd4bf" stroke-opacity="0.35"/>
-<text x="72" y="232" fill="#5eead4">R · Python · CDISC · GxP · LLM/RAG</text>
-<text x="352" y="232" fill="#64748b">// jaimeyan.com</text>
+<g font-family="{MONO}" font-size="16">
+<rect x="56" y="208" width="560" height="38" rx="8" fill="#0b1220" fill-opacity="0.55" stroke="#2dd4bf" stroke-opacity="0.35"/>
+<text x="74" y="233" fill="#5eead4">R · Python · CDISC · GxP · LLM/RAG</text>
+<text x="440" y="233" fill="#94a3b8">// jaimeyan.com</text>
 </g>
 </svg>
 """
@@ -129,9 +129,9 @@ def build_footer() -> str:
             f"{x},{h * 0.45 + amp * math.sin(x / w * math.tau * 1.5 + phase):.1f}" for x in range(0, w + 1, 20)
         )
         waves.append(f'<polygon points="0,{h} {pts} {w},{h}" fill="url(#fw)" fill-opacity="{op}"/>')
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="Decorative footer wave">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" aria-hidden="true">
 <defs><linearGradient id="fw" x1="0" y1="0" x2="1" y2="0">
-<stop offset="0" stop-color="#0f2740"/><stop offset="0.6" stop-color="#14b8a6"/><stop offset="1" stop-color="#a78bfa"/>
+<stop offset="0" stop-color="#14b8a6" stop-opacity="0"/><stop offset="0.6" stop-color="#14b8a6"/><stop offset="1" stop-color="#a78bfa"/>
 </linearGradient></defs>
 {''.join(waves)}
 </svg>
