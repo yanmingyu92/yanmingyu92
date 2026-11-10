@@ -145,10 +145,10 @@ def main() -> int:
     args = parser.parse_args()
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(build(), encoding="utf-8")
+    out.write_text(build(), encoding="utf-8", newline="\n")
     print(f"wrote {out} ({out.stat().st_size // 1024} KB)")
     footer = out.with_name("footer.svg")
-    footer.write_text(build_footer(), encoding="utf-8")
+    footer.write_text(build_footer(), encoding="utf-8", newline="\n")
     print(f"wrote {footer}")
     return 0
 

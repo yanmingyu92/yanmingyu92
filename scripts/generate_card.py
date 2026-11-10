@@ -38,6 +38,7 @@ ASCII_GAP = 34
 INFO_COLS = 56
 COLOR_STEP = 24  # colour quantisation keeps the SVG small
 
+DEFAULT_PROMPT = "~$ neofetch"
 FONT_STACK = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
 
 
@@ -123,10 +124,11 @@ def _cell(rgb: tuple[int, int, int], theme: Theme) -> tuple[str, str]:
     lum = (0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]) / 255
     level = lum if theme.ascii_dense_is_bright else 1 - lum
     char = RAMP[min(len(RAMP) - 1, int(level * len(RAMP)))]
-    # Keep very dark (or very light) pixels visible against the card.
-    floor, ceil = theme.ascii_floor, theme.ascii_ceil
-    scale = max(floor, min(ceil, lum)) / max(lum, 1e-3)
-    r, g, b = (_quantise(min(255, int(c * scale))) for c in rgb)
+    # Keep very dark (or very light) pixels visible against the card. A
+    # uniform shift (not a multiplicative scale) also lifts pure black.
+    target = max(theme.ascii_floor, min(theme.ascii_ceil, lum))
+    shift = (target - lum) * 255
+    r, g, b = (_quantise(max(0, min(255, int(c + shift)))) for c in rgb)
     return char, f"#{r:02x}{g:02x}{b:02x}"
 
 
@@ -160,16 +162,31 @@ def _request(url: str, token: str | None, body: dict | None = None) -> object:
         return json.load(resp)
 
 
+API_ERRORS = (OSError, urllib.error.URLError, ValueError, KeyError, TypeError, AttributeError)
+PER_PAGE = 100
+
+
+def fetch_owned_repos(username: str, token: str | None) -> list[dict]:
+    """All public repos owned by the user (paginated), forks excluded."""
+    repos: list[dict] = []
+    page = 1
+    while True:
+        batch = _request(f"{API}/users/{username}/repos?per_page={PER_PAGE}&type=owner&page={page}", token)
+        repos.extend(batch)
+        if len(batch) < PER_PAGE:
+            return [r for r in repos if not r.get("fork")]
+        page += 1
+
+
 def fetch_stats(username: str, token: str | None) -> dict[str, str]:
     stats: dict[str, str] = {}
     try:
         user = _request(f"{API}/users/{username}", token)
-        repos = _request(f"{API}/users/{username}/repos?per_page=100&type=owner", token)
-        public = [r for r in repos if not r.get("fork") and not r.get("private")]
-        stats["repos"] = str(user.get("public_repos", len(public)))
-        stats["stars"] = str(sum(r.get("stargazers_count", 0) for r in public))
+        repos = fetch_owned_repos(username, token)
+        stats["repos"] = str(len(repos))
+        stats["stars"] = str(sum(r.get("stargazers_count", 0) for r in repos))
         stats["followers"] = str(user.get("followers", 0))
-    except (urllib.error.URLError, ValueError, KeyError) as exc:
+    except API_ERRORS as exc:
         print(f"warning: REST stats unavailable ({exc})", file=sys.stderr)
     if token:
         query = ("query($u:String!){user(login:$u){contributionsCollection"
@@ -178,7 +195,7 @@ def fetch_stats(username: str, token: str | None) -> dict[str, str]:
             res = _request(f"{API}/graphql", token, {"query": query, "variables": {"u": username}})
             total = res["data"]["user"]["contributionsCollection"]["contributionCalendar"]["totalContributions"]
             stats["contributions"] = f"{total:,} (last 12 months)"
-        except (urllib.error.URLError, ValueError, KeyError, TypeError) as exc:
+        except API_ERRORS as exc:
             print(f"warning: contributions unavailable ({exc})", file=sys.stderr)
     return stats
 
@@ -256,8 +273,9 @@ def render_svg(cfg: dict, img, mask, stats: dict[str, str], theme: Theme) -> str
     height = round(body_y + body_rows * LINE_H + PAD - LINE_H / 2)
     ascii_y = body_y + (body_rows - img.height) * LINE_H / 2
     info_y = body_y + (body_rows - len(lines)) * LINE_H / 2
-    prompt = escape(cfg.get("prompt", "~$ neofetch"))
-    cursor_x = PAD + (len(cfg.get("prompt", "")) + 1) * CHAR_W
+    prompt_raw = cfg.get("prompt") or DEFAULT_PROMPT
+    prompt = escape(prompt_raw)
+    cursor_x = PAD + (len(prompt_raw) + 1) * CHAR_W
 
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
@@ -267,7 +285,7 @@ def render_svg(cfg: dict, img, mask, stats: dict[str, str], theme: Theme) -> str
         f"<title>Neofetch-style profile card for {escape(cfg['title'])}</title>",
         f'<rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="12" fill="{theme.bg}" stroke="{theme.border}"/>',
         f'<g font-family="{FONT_STACK}" font-size="{FONT_SIZE}">',
-        f'<text x="{PAD}" y="{prompt_y}" fill="{theme.prompt}" textLength="{len(cfg.get("prompt", "")) * CHAR_W:.1f}" '
+        f'<text x="{PAD}" y="{prompt_y}" fill="{theme.prompt}" textLength="{len(prompt_raw) * CHAR_W:.1f}" '
         f'lengthAdjust="spacingAndGlyphs">{prompt}</text>',
         f'<rect class="c" x="{cursor_x:.1f}" y="{prompt_y - 12}" width="8" height="15" fill="{theme.text}"/>',
         *_render_ascii(ascii_rows(img, mask, theme), PAD, ascii_y, cols),
@@ -282,6 +300,8 @@ def main() -> int:
     parser.add_argument("--config", default="neofetch.json")
     parser.add_argument("--out", default="dist")
     parser.add_argument("--offline", action="store_true", help="skip GitHub API calls")
+    parser.add_argument("--require-stats", action="store_true",
+                        help="fail (exit 1) instead of rendering a card with missing stats")
     args = parser.parse_args()
 
     config_path = Path(args.config).resolve()
@@ -290,13 +310,17 @@ def main() -> int:
     img, mask = load_portrait(cfg["image"], root)
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     stats = {} if args.offline else fetch_stats(cfg["username"], token)
+    missing = [k for k in cfg["stats"]["fields"] if k not in stats]
+    if args.require_stats and missing:
+        print(f"error: missing stats {missing}; existing cards left unchanged", file=sys.stderr)
+        return 1
 
     out_dir = root / args.out
     out_dir.mkdir(parents=True, exist_ok=True)
     for theme in THEMES:
         path = out_dir / f"neofetch-{theme.name}.svg"
-        path.write_text(render_svg(cfg, img, mask, stats, theme), encoding="utf-8")
-        print(f"wrote {path.relative_to(root)} ({path.stat().st_size // 1024} KB)")
+        path.write_text(render_svg(cfg, img, mask, stats, theme), encoding="utf-8", newline="\n")
+        print(f"wrote {path.relative_to(root)} ({path.stat().st_size:,} bytes)")
     return 0
 
 

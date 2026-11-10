@@ -150,7 +150,7 @@ Public benchmarks for clinical statistical-programming automation, plus graph-co
 <!-- FEED:START -->
 - [AI in Validated Environments: LLMs Inside the GxP Boundary](https://jaimeyan.com/blog/ai-in-validated-environments.html) <sub>· Nov 04, 2026</sub>
 - [Visit Windowing, Baseline, and LOCF: The Rules That Decide BDS](https://jaimeyan.com/blog/visit-windowing-baseline-locf-guide.html) <sub>· Nov 04, 2026</sub>
-- [Define-XML and the Reviewer's Guide, Explained for Programmers](https://jaimeyan.com/blog/define-xml-reviewers-guide-tutorial.html) <sub>· Oct 26, 2026</sub>
+- [Define\-XML and the Reviewer's Guide, Explained for Programmers](https://jaimeyan.com/blog/define-xml-reviewers-guide-tutorial.html) <sub>· Oct 26, 2026</sub>
 - [How to Read a Protocol and SAP as a Statistical Programmer](https://jaimeyan.com/blog/protocol-sap-reading-guide.html) <sub>· Oct 26, 2026</sub>
 - [Git for SAS Programmers: Version Control in a GxP World](https://jaimeyan.com/blog/git-for-clinical-programmers.html) <sub>· Oct 06, 2026</sub>
 <!-- FEED:END -->

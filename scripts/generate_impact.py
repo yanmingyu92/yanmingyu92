@@ -103,7 +103,7 @@ def main() -> int:
     out.mkdir(parents=True, exist_ok=True)
     for pal in PALETTES:
         path = out / f"impact-{pal.name}.svg"
-        path.write_text(build(pal), encoding="utf-8")
+        path.write_text(build(pal), encoding="utf-8", newline="\n")
         print(f"wrote {path}")
     return 0
 
