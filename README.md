@@ -102,11 +102,5 @@ Public benchmarks for clinical statistical-programming automation, plus graph-co
 
 ![CDISC](https://img.shields.io/badge/CDISC-SDTM%20%C2%B7%20ADaM%20%C2%B7%20Define--XML-005A9C?style=flat-square) ![pharmaverse](https://img.shields.io/badge/pharmaverse-admiral%20%C2%B7%20rtables-E35B2F?style=flat-square) ![GxP](https://img.shields.io/badge/GxP-21%20CFR%20Part%2011%20%C2%B7%20GAMP%205-2E7D32?style=flat-square) ![Submissions](https://img.shields.io/badge/Submissions-NDA%20%C2%B7%20eCTD%20%C2%B7%20ISS%2FISE-6A1B9A?style=flat-square)
 
-<!-- Optional: contribution snake. Remove this block if you prefer a quieter profile. -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yanmingyu92/yanmingyu92/output/snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/yanmingyu92/yanmingyu92/output/snake.svg">
-  <img alt="Contribution graph animated as a snake" src="https://raw.githubusercontent.com/yanmingyu92/yanmingyu92/output/snake.svg">
-</picture>
 
 <sub>All demos and benchmarks use synthetic or public test data (e.g. the CDISC Pilot). Views are my own and not those of any employer.</sub>

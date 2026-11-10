@@ -49,6 +49,14 @@ git remote add origin https://github.com/yanmingyu92/yanmingyu92.git && git push
 
 ## 3. 启用 Actions
 
+> **当前状态（2026-11-10）：** 仓库已创建并推送，但 GitHub 拒绝运行 Actions（"account is locked due to a billing issue"）。卡片 SVG 已提交在 `dist/`，主页正常显示，只是统计数字不会自动更新。两个工作流已暂停。在 **Settings → Billing and plans** 解决账单问题后，执行：
+>
+> ```bash
+> gh workflow enable neofetch.yml -R yanmingyu92/yanmingyu92 && gh workflow run neofetch.yml -R yanmingyu92/yanmingyu92
+> ```
+>
+> 想要贪吃蛇的话，同样启用并运行 `snake.yml`，再把 snake 的 `<picture>` 块加回 README（见 git 历史里第一次提交的版本）。
+
 1. 打开仓库的 **Settings → Actions → General → Workflow permissions**，选 **Read and write permissions**。脚本需要提交刷新后的 SVG。
 2. 打开 **Actions** 标签页，手动运行一次 **Refresh neofetch card**。
 3. 如果要贪吃蛇：手动运行一次 **Contribution snake**，它会创建 `output` 分支。不要的话，删掉 `snake.yml` 和 README 里的 snake 块。
