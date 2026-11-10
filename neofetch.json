@@ -33,6 +33,6 @@
   ],
   "stats": {
     "title": "GitHub",
-    "fields": ["repos", "stars", "contributions"]
+    "fields": ["repos", "stars"]
   }
 }
