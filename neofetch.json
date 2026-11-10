@@ -1,0 +1,45 @@
+{
+  "username": "yanmingyu92",
+  "prompt": "jaime@clinical-ds:~$ neofetch",
+  "title": "jaime@yanmingyu92",
+  "image": {
+    "path": "assets/portrait.jpg",
+    "crop": [170, 40, 1084, 1254],
+    "cols": 44,
+    "remove_background": true
+  },
+  "sections": [
+    {
+      "fields": [
+        ["Name", "Jaime (Mingyu) Yan, PhD"],
+        ["Role", "Assoc. Director, Statistical Programming @ Kardigan"],
+        ["Previously", "Merck · Regeneron · Boehringer Ingelheim"],
+        ["Uptime", "9+ years · Phase 1-3 · cardiovascular & oncology"],
+        ["Milestone", "NDA programming lead, LIPFENDRA® (FDA, Jul 2026)"],
+        ["Focus", "Clinical data science · GxP analytics · LLM/RAG"]
+      ]
+    },
+    {
+      "fields": [
+        ["Languages", "R · Python · SQL · SAS"],
+        ["Stack", "Shiny · pharmaverse · Quarto · Docker · CI/CD"],
+        ["Standards", "CDISC SDTM/ADaM · Define-XML · Part 11 · GAMP 5"],
+        ["Packages", "py4csr (PyPI) · admiralagent · tlfstack"],
+        ["Papers", "4 sole-authored journal (2026) · 13 PhUSE/PharmaSUG"],
+        ["Education", "PhD Data Science, Harrisburg University (2026)"]
+      ]
+    },
+    {
+      "title": "Contact",
+      "fields": [
+        ["Web", "jaimeyan.com"],
+        ["LinkedIn", "linkedin.com/in/jaime-y-66312a133"],
+        ["Scholar", "scholar.google.com · Jaime Yan"]
+      ]
+    }
+  ],
+  "stats": {
+    "title": "GitHub",
+    "fields": ["repos", "stars", "contributions"]
+  }
+}
